@@ -1,8 +1,8 @@
 if @hide_prices
-  @column_widths = { 0 => 100, 1 => 165, 2 => 75, 3 => 75 } 
+  @column_widths = { 0 => 100, 1 => 165, 2 => 125, 3 => 125 }
   @align = { 0 => :left, 1 => :left, 2 => :right, 3 => :right }
 else
-  @column_widths = { 0 => 75, 1 => 205, 2 => 75, 3 => 50, 4 => 75, 5 => 60 } 
+  @column_widths = { 0 => 80, 1 => 200, 2 => 75, 3 => 50, 4 => 75, 5 => 60 }
   @align = { 0 => :left, 1 => :left, 2 => :left, 3 => :right, 4 => :right, 5 => :right}
 end
 
@@ -11,11 +11,11 @@ bounding_box [0,cursor], :width => 540, :height => 430 do
   move_down 2
   header =  [Prawn::Table::Cell.new( :text => t(:sku), :font_style => :bold),
                 Prawn::Table::Cell.new( :text => t(:item_description), :font_style => :bold ) ]
-  header <<  Prawn::Table::Cell.new( :text => t(:options), :font_style => :bold ) 
+  header <<  Prawn::Table::Cell.new( :text => t(:options), :font_style => :bold )
   header <<  Prawn::Table::Cell.new( :text => t(:price), :font_style => :bold ) unless @hide_prices
   header <<  Prawn::Table::Cell.new( :text => t(:qty), :font_style => :bold, :align => 1 )
   header <<  Prawn::Table::Cell.new( :text => t(:total), :font_style => :bold ) unless @hide_prices
-    
+
   table [header],
     :position           => :center,
     :border_width => 1,
@@ -57,7 +57,7 @@ bounding_box [0,cursor], :width => 540, :height => 430 do
   end
 
   render :partial => "totals" unless @hide_prices
-  
+
   move_down 2
 
   stroke do

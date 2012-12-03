@@ -1,0 +1,5 @@
+de:
+  invoice_print: "Rechung als PDF"
+  packaging_slip_print: "Lieferschein als PDF"
+  packaging_slip: Lieferschein
+  customer_invoice: Rechnung
